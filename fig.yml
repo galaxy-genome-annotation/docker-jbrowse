@@ -1,0 +1,6 @@
+jbrowse:
+  build: .
+  ports:
+   - "8089:80"
+  volumes:
+   - ./example:/data
