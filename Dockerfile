@@ -13,4 +13,7 @@ RUN mkdir -p /jbrowse/ && git clone --recursive https://github.com/gmod/jbrowse 
 RUN cd /jbrowse/ && ./setup.sh
 RUN cd /jbrowse/ && perl Makefile.PL && make && make install
 RUN rm -rf /usr/share/nginx/html && ln -s /jbrowse/ /usr/share/nginx/html
-VOLUME "/data"
+
+VOLUME /data
+COPY docker-entrypoint.sh /
+RUN ["/docker-entrypoint.sh"]
