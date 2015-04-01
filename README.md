@@ -4,9 +4,17 @@ Configurable docker image for [GMOD's
 JBrowse](https://github.com/gmod/jbrowse/).
 [http://jbrowse.org/](http://jbrowse.org/)
 
-This docker image allows customisation of loaded data; by placing 
+This docker image allows customisation of loaded data; by placing
 executable shell scripts in the mounted folder, you can easily load data
 on boot.
+
+## Example:
+
+A `fig.yml` file is provided for your convenience, allowing you to boot up the example quite quickly:
+
+```console
+$ fig up
+```
 
 ## Mount point
 
@@ -56,3 +64,4 @@ Variable       | Value/Use
 -------------- | ---
 `JBROWSE`      | The location of the jbrowse installation, including the `index.html`
 `JBRWOSE_DATA` | Location for the `sample_data` folder which contains publicised data
+`DATA_DIR`     | Location of mounted data
