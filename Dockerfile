@@ -5,7 +5,7 @@ MAINTAINER Eric Rasche <esr@tamu.edu>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update --fix-missing
-RUN apt-get --no-install-recommends -y install git build-essential zlib1g-dev libxml2-dev libexpat-dev
+RUN apt-get --no-install-recommends -y install git build-essential zlib1g-dev libxml2-dev libexpat-dev postgresql-client libpq-dev
 
 RUN mkdir -p /jbrowse/ && git clone --recursive https://github.com/gmod/jbrowse /jbrowse/ && \
     cd /jbrowse/ && \
@@ -15,7 +15,7 @@ WORKDIR /jbrowse/
 RUN ./setup.sh && \
     ./bin/cpanm --no-test --force JSON Digest::CRC32 Hash::Merge PerlIO::gzip Devel::Size \
     Heap::Simple Heap::Simple::XS List::MoreUtils Exception::Class Test::Warn Bio::Perl \
-    Bio::DB::SeqFeature::Store File::Next && \
+    Bio::DB::SeqFeature::Store File::Next Bio::DB::Das::Chado && \
     rm -rf /root/.cpan/
 
 RUN perl Makefile.PL && make && make install
