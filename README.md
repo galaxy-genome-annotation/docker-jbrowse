@@ -10,10 +10,10 @@ on boot.
 
 ## Example:
 
-A `fig.yml` file is provided for your convenience, allowing you to boot up the example quite quickly:
+A `docker-compose.yml` file is provided for your convenience, allowing you to boot up the example quite quickly:
 
 ```console
-$ fig up
+$ docker-compose up
 ```
 
 ## Mount point
@@ -63,5 +63,5 @@ There are a couple environment variables available to startup scripts:
 Variable       | Value/Use
 -------------- | ---
 `JBROWSE`      | The location of the jbrowse installation, including the `index.html`
-`JBRWOSE_DATA` | Location for the `sample_data` folder which contains publicised data
+`JBROWSE_DATA` | Location for the `sample_data` folder which contains publicised data
 `DATA_DIR`     | Location of mounted data
