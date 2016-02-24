@@ -13,7 +13,7 @@ RUN mkdir -p /jbrowse/ && git clone --recursive https://github.com/gmod/jbrowse 
 
 WORKDIR /jbrowse/
 RUN ./setup.sh && \
-    ./bin/cpanm --no-test --force JSON Digest::CRC32 Hash::Merge PerlIO::gzip Devel::Size \
+    ./bin/cpanm --no-test --force JSON Digest::Crc32 Hash::Merge PerlIO::gzip Devel::Size \
     Heap::Simple Heap::Simple::XS List::MoreUtils Exception::Class Test::Warn Bio::Perl \
     Bio::DB::SeqFeature::Store File::Next Bio::DB::Das::Chado && \
     rm -rf /root/.cpan/
