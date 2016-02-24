@@ -9,7 +9,7 @@ RUN apt-get --no-install-recommends -y install git build-essential zlib1g-dev li
 
 RUN mkdir -p /jbrowse/ && git clone --recursive https://github.com/gmod/jbrowse /jbrowse/ && \
     cd /jbrowse/ && \
-    git checkout 1.11.6-release
+    git checkout 1.12.0-release
 
 WORKDIR /jbrowse/
 RUN ./setup.sh && \
