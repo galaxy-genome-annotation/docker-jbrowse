@@ -1,12 +1,17 @@
 # JBrowse
 
-Configurable docker image for [GMOD's
-JBrowse](https://github.com/gmod/jbrowse/).
+Configurable docker image for [GMOD's JBrowse](https://github.com/gmod/jbrowse/).
+
 [http://jbrowse.org/](http://jbrowse.org/)
 
 This docker image allows customisation of loaded data; by placing
 executable shell scripts in the mounted folder, you can easily load data
 on boot.
+
+# Supported tags and respective `Dockerfile` links
+
+-   [`1.11.6`, (*1.11.6/Dockerfile*)](https://github.com/erasche/jbrowse/blob/85291f193b318c7e7b96f58f7b326b852613e679/Dockerfile)
+-   [`1.12.0`, (*1.12.0/Dockerfile*)](https://github.com/erasche/jbrowse/blob/72f51bbf9126a5e2cfa9755c58be12c0b7dc55fd/Dockerfile)
 
 ## Example:
 
