@@ -7,11 +7,10 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -qq update --fix-missing
 RUN apt-get --no-install-recommends -y install git build-essential zlib1g-dev libxml2-dev libexpat-dev postgresql-client libpq-dev libpng-dev wget unzip
 
-RUN mkdir -p /jbrowse/ && git clone --recursive https://github.com/gmod/jbrowse /jbrowse/ && \
-    cd /jbrowse/ && \
-    git checkout 1.12.1-release && \
-    git submodule init && \
-    git submodule update
+# JBrowse releases are only minified on jbrowse.org
+RUN wget -O jbrowse.zip http://jbrowse.org/wordpress/wp-content/plugins/download-monitor/download.php?id=105 && \
+    unzip jbrowse.zip && \
+    mv JBrowse-* jbrowse
 
 WORKDIR /jbrowse/
 RUN ./setup.sh && \
