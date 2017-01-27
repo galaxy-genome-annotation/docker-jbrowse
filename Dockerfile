@@ -17,7 +17,7 @@ RUN ./setup.sh && \
     ./bin/cpanm --notest --force JSON Digest::Crc32 Hash::Merge PerlIO::gzip Devel::Size \
     Heap::Simple Heap::Simple::XS List::MoreUtils Exception::Class Test::Warn Bio::Perl \
     Bio::DB::SeqFeature::Store File::Next Bio::DB::Das::Chado Bio::FeatureIO Bio::GFF3::LowLevel::Parser \
-    DBD::SQLite File::Copy::Recursive JSON::XS Parse::RecDescent local::lib && \
+    DBD::SQLite File::Copy::Recursive JSON::XS Parse::RecDescent local::lib Digest::Crc32 && \
     rm -rf /root/.cpan/
 
 RUN perl Makefile.PL && make && make install
