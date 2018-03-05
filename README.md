@@ -1,4 +1,4 @@
-# JBrowse
+# JBrowse [![Docker Automated build](https://img.shields.io/docker/automated/erasche/jbrowse.svg)](https://hub.docker.com/r/erasche/jbrowse/)
 
 Configurable docker image for [GMOD's JBrowse](https://github.com/gmod/jbrowse/).
 
