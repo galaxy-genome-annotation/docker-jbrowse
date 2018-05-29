@@ -1,7 +1,6 @@
 # JBrowse
 # VERSION 1.0
 FROM nginx
-MAINTAINER Eric Rasche <esr@tamu.edu>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update --fix-missing
