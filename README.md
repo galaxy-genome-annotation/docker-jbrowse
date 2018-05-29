@@ -1,4 +1,4 @@
-# JBrowse
+# JBrowse [![Docker Automated build](https://img.shields.io/docker/automated/erasche/jbrowse.svg)](https://hub.docker.com/r/erasche/jbrowse/)
 
 Configurable docker image for [GMOD's JBrowse](https://github.com/gmod/jbrowse/).
 
@@ -12,6 +12,9 @@ on boot.
 
 -   [`1.11.6`, (*1.11.6/Dockerfile*)](https://github.com/erasche/docker-jbrowse/blob/85291f193b318c7e7b96f58f7b326b852613e679/Dockerfile)
 -   [`1.12.0`, (*1.12.0/Dockerfile*)](https://github.com/erasche/docker-jbrowse/blob/72f51bbf9126a5e2cfa9755c58be12c0b7dc55fd/Dockerfile)
+-   [`1.12.1`, (*1.12.1/Dockerfile*)](https://github.com/erasche/docker-jbrowse/blob/a2d0717628a68b30cc9b9f93b63afa0971028024/Dockerfile)
+-   [`1.12.3`, (*1.12.3/Dockerfile*)](https://github.com/erasche/docker-jbrowse/blob/d105c1a63a09ac16679e8af53b60e4da1bb703f4/Dockerfile)
+-   [`1.12.5`, (*1.12.5/Dockerfile*)](https://github.com/erasche/docker-jbrowse/blob/ddd9462d79dcd5bcfb9458953400aac1d3c81144/Dockerfile)
 
 ## Example:
 
