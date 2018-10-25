@@ -1,7 +1,6 @@
 # JBrowse
 # VERSION 1.0
 FROM nginx
-MAINTAINER Eric Rasche <esr@tamu.edu>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man7
