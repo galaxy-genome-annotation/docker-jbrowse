@@ -1,30 +1,23 @@
 # JBrowse
-# VERSION 1.0
 FROM nginx
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man7
 
 RUN apt-get -qq update --fix-missing
-RUN apt-get --no-install-recommends -y install git build-essential zlib1g-dev libxml2-dev libexpat-dev postgresql-client libpq-dev libpng-dev wget unzip perl-doc ca-certificates
+RUN apt-get --no-install-recommends -y install build-essential zlib1g-dev libxml2-dev libexpat-dev postgresql-client libpq-dev libpng-dev wget unzip perl-doc ca-certificates
 
-# JBrowse releases are only minified on jbrowse.org
-RUN wget -O jbrowse.zip https://github.com/GMOD/jbrowse/releases/download/1.12.5-release/JBrowse-1.12.5.zip && \
-    unzip jbrowse.zip && \
-    mv JBrowse-* jbrowse
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-Linux-x86_64.sh -O ~/miniconda.sh && \
+    /bin/bash ~/miniconda.sh -b -p /conda/ && \
+    rm ~/miniconda.sh
 
-WORKDIR /jbrowse/
-RUN ./setup.sh && \
-    ./bin/cpanm --notest --force JSON Digest::Crc32 Hash::Merge PerlIO::gzip Devel::Size \
-    Heap::Simple Heap::Simple::XS List::MoreUtils Exception::Class Test::Warn Bio::Perl \
-    Bio::DB::SeqFeature::Store File::Next Bio::DB::Das::Chado Bio::FeatureIO Bio::GFF3::LowLevel::Parser \
-    DBD::SQLite File::Copy::Recursive JSON::XS Parse::RecDescent local::lib Digest::Crc32 Bio::GFF3::LowLevel::Parser && \
-    rm -rf /root/.cpan/
+ENV PATH="/conda/bin:${PATH}"
 
-RUN perl Makefile.PL && make && make install
-RUN rm -rf /usr/share/nginx/html && ln -s /jbrowse/ /usr/share/nginx/html
+RUN conda install -y --override-channels --channel iuc --channel conda-forge --channel bioconda --channel defaults jbrowse=1.16.2
 
-RUN echo "include += data/datasets.conf" >> /jbrowse/jbrowse.conf
+RUN rm -rf /usr/share/nginx/html && ln -s /conda/opt/jbrowse/ /usr/share/nginx/html && \
+    ln -s /jbrowse/data /conda/opt/jbrowse/data && \
+    sed -i '/include += {dataRoot}\/tracks.conf/a include += {dataRoot}\/datasets.conf' /conda/opt/jbrowse/jbrowse.conf
 
 VOLUME /data
 COPY docker-entrypoint.sh /
