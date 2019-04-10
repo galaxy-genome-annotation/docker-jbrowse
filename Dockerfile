@@ -17,7 +17,7 @@ RUN conda install -y --override-channels --channel iuc --channel conda-forge --c
 
 RUN rm -rf /usr/share/nginx/html && ln -s /conda/opt/jbrowse/ /usr/share/nginx/html && \
     ln -s /jbrowse/data /conda/opt/jbrowse/data && \
-    sed -i '/include += {dataRoot}\/tracks.conf/a include += {dataRoot}\/datasets.conf' /conda/opt/jbrowse/jbrowse.conf
+    sed -i '/include += {dataRoot}\/tracks.conf/a include += {dataRoot}\/datasets.conf' /conda/opt/jbrowse/jbrowse.conf && \
     sed -i '/include += {dataRoot}\/tracks.conf/a include += {dataRoot}\/../datasets.conf' /conda/opt/jbrowse/jbrowse.conf
 
 VOLUME /data
