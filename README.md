@@ -16,6 +16,7 @@ on boot.
 -   [`1.12.3`, (*1.12.3/Dockerfile*)](https://github.com/galaxy-genome-annotation/docker-jbrowse/blob/d105c1a63a09ac16679e8af53b60e4da1bb703f4/Dockerfile)
 -   [`1.12.5`, (*1.12.5/Dockerfile*)](https://github.com/galaxy-genome-annotation/docker-jbrowse/blob/ddd9462d79dcd5bcfb9458953400aac1d3c81144/Dockerfile)
 -   [`1.16.2`, (*1.16.2/Dockerfile*)](https://github.com/galaxy-genome-annotation/docker-jbrowse/blob/b9c62f046e24aa51ee14fcc961df3d6b953141f9/Dockerfile)
+-   [`1.16.2`, (*1.16.4/Dockerfile*)](https://github.com/galaxy-genome-annotation/docker-jbrowse/blob/ffd0831c318f40662b211aa72a64c1cb12bfb5ac/Dockerfile)
 
 ## Example:
 
