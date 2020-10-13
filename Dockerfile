@@ -7,7 +7,7 @@ RUN mkdir -p /usr/share/man/man1 /usr/share/man/man7
 RUN apt-get -qq update --fix-missing
 RUN apt-get --no-install-recommends -y install build-essential zlib1g-dev libxml2-dev libexpat-dev postgresql-client libpq-dev libpng-dev wget unzip perl-doc ca-certificates
 
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.8.3-Linux-x86_64.sh -O ~/miniconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py38_4.8.3-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /conda/ && \
     rm ~/miniconda.sh
 
